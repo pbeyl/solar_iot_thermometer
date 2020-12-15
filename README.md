@@ -1,4 +1,4 @@
-Solar Powered IOT Thermometer
+## Solar Powered IOT Thermometer
 Paul Beyleveld
 paul (dot) beyleveld at gmail (dot) com
 
@@ -12,6 +12,7 @@ The only requiement is a wifi access point internet connection and a channel on 
 
 The Circuit diagram in the circuit folder offers insight into the electronics I used, these 
 electronics have also been installed in a Stevenson shield for more accurate readings.
+![Circuit Diagram](https://raw.githubusercontent.com/pbeyl/solar_iot_thermometer/master/circuit/dht22_d1mini_solar_bb.png)
 
 On first boot Wifimanager will start a random wifi access point on the ESP8266 chip. Connect
 to this ap and the captive portal will allow the user to configure wifi SSID, password, 
@@ -22,14 +23,13 @@ once connected it will establish an mqtt session with thingspeak mqtt service.
 It will read the values from the DHT22 sensor and publish field 1-6 to the configured channel,
 after a successful publish a deep sleep will be triggered for 5 minutes.
 
-Mapping of the thingspeak channel fields are as follows
--------------------------------------------------------
-field1 = Temperature in Celsius
-field2 = Temperature in Fahrenheit
-field3 = Humidity
-field4 = Heat Index Calculated in Celsius
-field5 = Battery Level (V)
-field6 = Wifi Signal RSSI (dBm)
+## Mapping of the thingspeak channel fields are as follows
+* field1 = Temperature in Celsius
+* field2 = Temperature in Fahrenheit
+* field3 = Humidity
+* field4 = Heat Index Calculated in Celsius
+* field5 = Battery Level (V)
+* field6 = Wifi Signal RSSI (dBm)
 
 It is possible to reset the wifi settings in order to reconfigure the wifi or thingspeak settings,
 simply press the D1 mini reset switch twice within a 3 second period will trigger configuration reset
